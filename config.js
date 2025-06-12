@@ -16,6 +16,10 @@ module.exports = {
       "--disable-web-security",
       "--disable-features=IsolateOrigins,site-per-process",
     ],
+    // Connect to existing browser session
+    connectToExisting: true, // Set to true to connect to existing browser
+    debuggingPort: 9222, // Chrome remote debugging port
+    debuggingHost: 'localhost', // Chrome debugging host
   },
 
   // Timing configuration (in milliseconds)

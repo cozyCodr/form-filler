@@ -52,15 +52,33 @@ class LeadFormAutomation {
 
   async initialize() {
     try {
-      logger.info('Launching browser with stealth mode...');
-      this.browser = await puppeteer.launch(config.browser);
-      this.page = await this.browser.newPage();
-      
-      // Set user agent
-      await this.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-      
-      // Set viewport
-      await this.page.setViewport({ width: 1366, height: 768 });
+      if (config.browser.connectToExisting) {
+        logger.info('Connecting to existing browser session...');
+        this.browser = await puppeteer.connect({
+          browserURL: `http://${config.browser.debuggingHost || 'localhost'}:${config.browser.debuggingPort}`,
+          defaultViewport: null
+        });
+        
+        // Get existing pages or create new one
+        const pages = await this.browser.pages();
+        if (pages.length > 0) {
+          this.page = pages[0]; // Use the first available page
+          logger.info('Connected to existing page');
+        } else {
+          this.page = await this.browser.newPage();
+          logger.info('Created new page in existing browser');
+        }
+      } else {
+        logger.info('Launching browser with stealth mode...');
+        this.browser = await puppeteer.launch(config.browser);
+        this.page = await this.browser.newPage();
+        
+        // Set user agent
+        await this.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+        
+        // Set viewport
+        await this.page.setViewport({ width: 1366, height: 768 });
+      }
       
       logger.info('Browser initialized successfully');
     } catch (error) {
@@ -156,14 +174,17 @@ class LeadFormAutomation {
         await this.page.goto(config.formUrl);
         await new Promise(resolve => setTimeout(resolve, config.delays.pageLoad));
         
-        // Check if login is required after navigation
-        await this.handleLogin();
-        
-        // If we had to login, navigate to form page again
-        if (!this.page.url().includes('/Lead/Add')) {
-          logger.info('Navigating to form page after login');
-          await this.page.goto(config.formUrl);
-          await new Promise(resolve => setTimeout(resolve, config.delays.pageLoad));
+        // Only check for login if we're not connecting to existing browser
+        if (!config.browser.connectToExisting) {
+          // Check if login is required after navigation
+          await this.handleLogin();
+          
+          // If we had to login, navigate to form page again
+          if (!this.page.url().includes('/Lead/Add')) {
+            logger.info('Navigating to form page after login');
+            await this.page.goto(config.formUrl);
+            await new Promise(resolve => setTimeout(resolve, config.delays.pageLoad));
+          }
         }
         
         logger.info('Navigation completed');
