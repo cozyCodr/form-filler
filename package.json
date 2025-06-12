@@ -1,0 +1,24 @@
+{
+  "name": "leadzone-form-automation",
+  "version": "1.0.0",
+  "description": "Automated lead data entry for theleadzone.com using Puppeteer with stealth",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js --test"
+  },
+  "keywords": ["automation", "puppeteer", "form-filling"],
+  "author": "Jeff Van Deusen",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^23.5.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "xlsx": "^0.18.5",
+    "winston": "^3.11.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
+}

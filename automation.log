@@ -1,0 +1,30 @@
+2025-06-11T18:46:37.552Z [INFO]: Launching browser with stealth mode...
+2025-06-11T18:46:41.791Z [INFO]: Browser initialized successfully
+2025-06-11T18:46:42.312Z [INFO]: Loaded 0 records from Excel file
+2025-06-11T18:46:42.312Z [INFO]: Processing 0 leads starting from row 0
+2025-06-11T18:46:42.312Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-11T18:46:42.313Z [INFO]: Total Processed: 0
+2025-06-11T18:46:42.313Z [INFO]: Successful: 0
+2025-06-11T18:46:42.313Z [INFO]: Failed: 0
+2025-06-11T18:46:42.315Z [INFO]: Detailed results saved to: results_2025-06-11.json
+2025-06-11T18:46:43.198Z [INFO]: Browser closed
+2025-06-11T18:54:12.507Z [INFO]: Launching browser with stealth mode...
+2025-06-11T18:54:15.649Z [INFO]: Browser initialized successfully
+2025-06-11T18:54:16.393Z [INFO]: Loaded 0 records from Excel file
+2025-06-11T18:54:16.394Z [INFO]: Processing 0 leads starting from row 0
+2025-06-11T18:54:16.394Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-11T18:54:16.395Z [INFO]: Total Processed: 0
+2025-06-11T18:54:16.395Z [INFO]: Successful: 0
+2025-06-11T18:54:16.395Z [INFO]: Failed: 0
+2025-06-11T18:54:16.397Z [INFO]: Detailed results saved to: results_2025-06-11.json
+2025-06-11T18:54:17.031Z [INFO]: Browser closed
+2025-06-11T19:00:11.980Z [INFO]: Launching browser with stealth mode...
+2025-06-11T19:00:14.937Z [INFO]: Browser initialized successfully
+2025-06-11T19:00:15.489Z [INFO]: Loaded 0 records from Excel file
+2025-06-11T19:00:15.490Z [INFO]: Processing 0 leads starting from row 0
+2025-06-11T19:00:15.491Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-11T19:00:15.491Z [INFO]: Total Processed: 0
+2025-06-11T19:00:15.492Z [INFO]: Successful: 0
+2025-06-11T19:00:15.492Z [INFO]: Failed: 0
+2025-06-11T19:00:15.493Z [INFO]: Detailed results saved to: results_2025-06-11.json
+2025-06-11T19:00:16.041Z [INFO]: Browser closed
