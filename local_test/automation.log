@@ -1,0 +1,212 @@
+2025-06-12T10:33:15.435Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:33:16.981Z [INFO]: Browser initialized successfully
+2025-06-12T10:33:17.734Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:33:17.735Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:33:17.736Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:33:17.738Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:33:17.765Z [ERROR]: Error filling form: net::ERR_CONNECTION_REFUSED at http://localhost:3000
+2025-06-12T10:33:17.774Z [ERROR]: Failed to save screenshot: Protocol error (Page.captureScreenshot): Not attached to an active page
+2025-06-12T10:33:17.774Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T10:33:17.775Z [INFO]: Total Processed: 0
+2025-06-12T10:33:17.775Z [INFO]: Successful: 0
+2025-06-12T10:33:17.775Z [INFO]: Failed: 0
+2025-06-12T10:33:17.776Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T10:33:17.954Z [INFO]: Browser closed
+2025-06-12T10:37:07.699Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:37:08.177Z [INFO]: Browser initialized successfully
+2025-06-12T10:37:08.772Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:37:08.773Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:37:08.773Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:37:08.774Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:38:44.308Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:38:44.709Z [INFO]: Browser initialized successfully
+2025-06-12T10:38:45.277Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:38:45.278Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:38:45.278Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:38:45.279Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:39:36.768Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:39:37.407Z [INFO]: Browser initialized successfully
+2025-06-12T10:39:38.059Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:39:38.059Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:39:38.059Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:39:38.060Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:39:46.320Z [ERROR]: Error filling form: Execution context was destroyed
+2025-06-12T10:39:46.322Z [ERROR]: Failed to save screenshot: Protocol error (Page.captureScreenshot): Session closed. Most likely the page has been closed.
+2025-06-12T10:39:46.323Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T10:39:46.323Z [INFO]: Total Processed: 0
+2025-06-12T10:39:46.323Z [INFO]: Successful: 0
+2025-06-12T10:39:46.323Z [INFO]: Failed: 0
+2025-06-12T10:39:46.325Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T10:39:46.326Z [INFO]: Browser closed
+2025-06-12T10:44:03.643Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:44:04.436Z [INFO]: Browser initialized successfully
+2025-06-12T10:44:05.161Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:44:05.162Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:44:05.162Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:44:05.163Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:48:21.699Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:48:22.395Z [INFO]: Browser initialized successfully
+2025-06-12T10:48:23.228Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:48:23.228Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:48:23.228Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:48:23.229Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:48:23.229Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T10:48:23.230Z [INFO]: Navigating to localhost:3000
+2025-06-12T10:48:28.798Z [INFO]: Navigation completed
+2025-06-12T10:48:28.799Z [INFO]: Step 2: Random mouse movement
+2025-06-12T10:48:28.950Z [INFO]: Step 3: Filling First Name
+2025-06-12T10:48:29.693Z [INFO]: Step 4: Filling Last Name
+2025-06-12T10:48:30.451Z [INFO]: Step 5: Filling Phone Number
+2025-06-12T10:48:31.830Z [INFO]: Step 6: Checking and filling Email
+2025-06-12T10:50:14.739Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:50:15.376Z [INFO]: Browser initialized successfully
+2025-06-12T10:50:16.043Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:50:16.043Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:50:16.043Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:50:16.044Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:50:16.046Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T10:50:16.047Z [INFO]: Navigating to localhost:3000
+2025-06-12T10:50:21.169Z [INFO]: Navigation completed
+2025-06-12T10:50:21.171Z [INFO]: Step 2: Random mouse movement
+2025-06-12T10:50:22.830Z [INFO]: Step 3: Filling First Name
+2025-06-12T10:50:23.804Z [INFO]: Step 4: Filling Last Name
+2025-06-12T10:50:24.679Z [INFO]: Step 5: Filling Phone Number
+2025-06-12T10:50:25.961Z [INFO]: Step 6: Checking and filling Email
+2025-06-12T10:50:25.969Z [INFO]: Email field exists: true
+2025-06-12T10:50:25.970Z [INFO]: Typing in email field
+2025-06-12T10:50:25.980Z [INFO]: Email typing completed
+2025-06-12T10:50:26.267Z [INFO]: Step 6 completed successfully
+2025-06-12T10:52:27.240Z [INFO]: Launching browser with stealth mode...
+2025-06-12T10:52:27.724Z [INFO]: Browser initialized successfully
+2025-06-12T10:52:28.366Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T10:52:28.366Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T10:52:28.366Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T10:52:28.367Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T10:52:28.367Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T10:52:28.367Z [INFO]: Navigating to localhost:3000
+2025-06-12T10:52:33.522Z [INFO]: Navigation completed
+2025-06-12T10:52:33.523Z [INFO]: Step 2: Random mouse movement
+2025-06-12T10:52:35.191Z [INFO]: Step 3: Filling First Name
+2025-06-12T10:52:35.885Z [INFO]: Step 4: Filling Last Name
+2025-06-12T10:52:36.689Z [INFO]: Step 5: Filling Phone Number
+2025-06-12T10:52:38.283Z [INFO]: Step 6: Checking and filling Email
+2025-06-12T10:52:38.289Z [INFO]: Email field exists: true
+2025-06-12T10:52:38.289Z [INFO]: Typing in email field
+2025-06-12T10:52:38.300Z [INFO]: Email typing completed
+2025-06-12T10:52:38.443Z [INFO]: Step 6 completed successfully
+2025-06-12T10:52:46.476Z [INFO]: Step 7: Processing Current Loan Details
+2025-06-12T10:52:46.477Z [INFO]: Current balance: 451051
+2025-06-12T10:52:46.477Z [INFO]: Step 8: Setting loan program (mortgage exists)
+2025-06-12T10:52:46.482Z [INFO]: CurrentLoanProgramName field exists: true
+2025-06-12T10:52:46.482Z [INFO]: Typing in CurrentLoanProgramName field
+2025-06-12T10:52:48.343Z [INFO]: CurrentLoanProgramName typing completed
+2025-06-12T10:52:48.561Z [INFO]: Step 9: Continuing with other form fields
+2025-06-12T11:01:19.897Z [INFO]: Launching browser with stealth mode...
+2025-06-12T11:01:21.470Z [INFO]: Browser initialized successfully
+2025-06-12T11:01:22.121Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T11:01:22.121Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T11:01:22.122Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T11:01:22.122Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T11:01:22.123Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T11:01:22.123Z [INFO]: Navigating to localhost:3000
+2025-06-12T11:01:27.407Z [INFO]: Navigation completed
+2025-06-12T11:01:27.409Z [INFO]: Step 2: Random mouse movement
+2025-06-12T11:01:28.935Z [INFO]: Step 3: Filling First Name
+2025-06-12T11:01:29.622Z [INFO]: Step 4: Filling Last Name
+2025-06-12T11:01:30.357Z [INFO]: Step 5: Filling Phone Number
+2025-06-12T11:01:31.699Z [INFO]: Step 6: Checking and filling Email
+2025-06-12T11:01:31.706Z [INFO]: Email field exists: true
+2025-06-12T11:01:31.706Z [INFO]: Typing in email field
+2025-06-12T11:01:31.720Z [INFO]: Email typing completed
+2025-06-12T11:01:31.965Z [INFO]: Step 6 completed successfully
+2025-06-12T11:01:31.965Z [INFO]: Step 7: Filling Credit Score
+2025-06-12T11:01:32.380Z [INFO]: Step 8: Setting Veteran status to No (default)
+2025-06-12T11:01:32.498Z [INFO]: Step 9: Filling Address
+2025-06-12T11:01:34.378Z [INFO]: Step 10: Filling City
+2025-06-12T11:01:36.086Z [INFO]: Step 11: Setting State (from Excel data)
+2025-06-12T11:01:36.312Z [INFO]: Step 12: Filling Zip Code
+2025-06-12T11:01:37.021Z [INFO]: Step 13: Setting Property State (same as borrower)
+2025-06-12T11:01:37.241Z [INFO]: Step 14: Filling Property Zip Code
+2025-06-12T11:01:38.065Z [INFO]: Step 15: Filling Property Value
+2025-06-12T11:01:38.958Z [INFO]: Step 16: Setting Property Type to Single Family (default)
+2025-06-12T11:01:39.130Z [INFO]: Step 17: Setting Occupancy to Primary (default)
+2025-06-12T11:01:39.269Z [INFO]: Step 18: Filling Monthly Property Tax (highlighted field)
+2025-06-12T11:01:39.609Z [INFO]: Step 19: Setting default values for remaining fields
+2025-06-12T11:01:53.075Z [INFO]: Form filled successfully
+2025-06-12T11:04:59.074Z [INFO]: Launching browser with stealth mode...
+2025-06-12T11:04:59.930Z [INFO]: Browser initialized successfully
+2025-06-12T11:05:00.635Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T11:05:00.636Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T11:05:00.636Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T11:05:00.637Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T11:05:00.638Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T11:05:00.638Z [INFO]: Navigating to localhost:3000
+2025-06-12T11:05:05.984Z [INFO]: Navigation completed
+2025-06-12T11:05:05.985Z [INFO]: Step 2: Random mouse movement
+2025-06-12T11:05:06.210Z [INFO]: Step 3: Filling First Name
+2025-06-12T11:05:07.061Z [INFO]: Step 4: Filling Last Name
+2025-06-12T11:05:08.073Z [INFO]: Step 5: Filling Phone Number
+2025-06-12T11:05:09.331Z [INFO]: Step 6: Checking and filling Email
+2025-06-12T11:05:09.337Z [INFO]: Email field exists: true
+2025-06-12T11:05:09.338Z [INFO]: Typing in email field
+2025-06-12T11:05:09.349Z [INFO]: Email typing completed
+2025-06-12T11:05:09.498Z [INFO]: Step 6 completed successfully
+2025-06-12T11:05:09.498Z [INFO]: Step 7: Filling Credit Score
+2025-06-12T11:05:09.998Z [INFO]: Step 8: Setting Veteran status to No (default)
+2025-06-12T11:05:10.209Z [INFO]: Step 9: Filling Address
+2025-06-12T11:05:12.199Z [INFO]: Step 10: Filling City
+2025-06-12T11:05:13.993Z [INFO]: Step 11: Setting State (from Excel data)
+2025-06-12T11:05:14.131Z [INFO]: Step 12: Filling Zip Code
+2025-06-12T11:05:14.809Z [INFO]: Step 13: Setting Property State (same as borrower)
+2025-06-12T11:05:15.113Z [INFO]: Step 14: Filling Property Zip Code
+2025-06-12T11:05:15.851Z [INFO]: Step 15: Filling Property Value
+2025-06-12T11:05:16.796Z [INFO]: Step 16: Setting Property Type to Single Family (default)
+2025-06-12T11:05:17.027Z [INFO]: Step 17: Setting Occupancy to Primary (default)
+2025-06-12T11:05:17.148Z [INFO]: Step 18: Filling Monthly Property Tax (highlighted field)
+2025-06-12T11:05:17.476Z [INFO]: Step 19: Setting default values for remaining fields
+2025-06-12T11:05:31.249Z [INFO]: Form filled successfully
+2025-06-12T11:05:31.255Z [INFO]: Starting form submission process
+2025-06-12T11:05:32.634Z [INFO]: Clicking Save & Quote button
+2025-06-12T11:05:32.969Z [INFO]: Save & Quote button clicked
+2025-06-12T11:05:36.695Z [INFO]: Form submitted successfully to local server
+2025-06-12T11:05:36.696Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T11:05:36.696Z [INFO]: Total Processed: 1
+2025-06-12T11:05:36.696Z [INFO]: Successful: 1
+2025-06-12T11:05:36.696Z [INFO]: Failed: 0
+2025-06-12T11:05:36.698Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T11:05:36.957Z [INFO]: Browser closed
+2025-06-12T11:10:04.131Z [INFO]: Launching browser with stealth mode...
+2025-06-12T11:10:05.457Z [INFO]: Browser initialized successfully
+2025-06-12T11:10:06.202Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T11:10:06.203Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T11:10:06.203Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T11:10:06.203Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T11:10:06.204Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T11:10:06.204Z [INFO]: Navigating to localhost:3000
+2025-06-12T11:10:11.512Z [INFO]: Navigation completed
+2025-06-12T11:10:11.513Z [INFO]: Step 2: Random mouse movement
+2025-06-12T11:10:11.779Z [INFO]: Step 3: Filling First Name
+2025-06-12T11:10:12.486Z [INFO]: Step 4: Filling Last Name
+2025-06-12T11:10:13.508Z [INFO]: Step 5: Filling Phone Number
+2025-06-12T11:10:14.952Z [INFO]: Step 6: Checking and filling Email
+2025-06-12T11:10:14.956Z [INFO]: Email field exists: true
+2025-06-12T11:10:14.957Z [INFO]: Typing in email field
+2025-06-12T11:10:14.965Z [INFO]: Email typing completed
+2025-06-12T11:10:15.112Z [INFO]: Step 6 completed successfully
+2025-06-12T11:10:15.112Z [INFO]: Step 7: Filling Credit Score
+2025-06-12T11:10:15.649Z [INFO]: Step 8: Setting Veteran status to No (default)
+2025-06-12T11:10:15.796Z [INFO]: Step 9: Filling Address
+2025-06-12T11:10:17.931Z [INFO]: Step 10: Filling City
+2025-06-12T11:10:19.599Z [INFO]: Step 11: Setting State (from Excel data)
+2025-06-12T11:10:19.748Z [INFO]: Step 12: Filling Zip Code
+2025-06-12T11:10:20.551Z [INFO]: Step 13: Setting Property State (same as borrower)
+2025-06-12T11:10:20.691Z [INFO]: Step 14: Filling Property Zip Code
+2025-06-12T11:10:21.249Z [INFO]: Step 15: Filling Property Value
+2025-06-12T11:10:22.170Z [INFO]: Step 16: Setting Property Type to Single Family (default)
+2025-06-12T11:10:22.330Z [INFO]: Step 17: Setting Occupancy to Primary (default)
+2025-06-12T11:10:22.562Z [INFO]: Step 18: Filling Monthly Property Tax (highlighted field)
+2025-06-12T11:10:22.843Z [INFO]: Step 19: Setting default values for remaining fields
+2025-06-12T11:10:39.369Z [INFO]: Form filled successfully
+2025-06-12T11:10:39.372Z [INFO]: Starting form submission process
+2025-06-12T11:10:40.799Z [INFO]: Clicking Save & Quote button
+2025-06-12T11:10:41.025Z [INFO]: Save & Quote button clicked

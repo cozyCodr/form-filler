@@ -1,0 +1,6 @@
+
+> form-filler-local-test@1.0.0 start
+> node server.js
+
+Server running at http://localhost:3000
+Form submissions will be logged to post.log

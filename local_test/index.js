@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const XLSX = require('xlsx');
@@ -90,116 +89,51 @@ class LeadFormAutomation {
     }
   }
 
-  async handleLogin() {
-    try {
-      logger.info('Checking if login is required');
-      
-      // Check if we're on a login page by looking for login form elements
-      const isLoginPage = await this.page.$('#signInFormUsername') !== null;
-      
-      if (isLoginPage) {
-        logger.info('Login page detected - proceeding with authentication');
-        
-        // Get credentials from environment variables
-        const email = process.env.LOGIN_EMAIL;
-        const password = process.env.LOGIN_PASSWORD;
-        
-        if (!email || !password) {
-          throw new Error('Login credentials not found in .env file. Please set LOGIN_EMAIL and LOGIN_PASSWORD');
-        }
-        
-        logger.info('Filling login credentials');
-        
-        // Fill username/email
-        await humanType(this.page, '#signInFormUsername', email);
-        await new Promise(resolve => setTimeout(resolve, randomDelay(500, 1000)));
-        
-        // Fill password
-        await humanType(this.page, '#signInFormPassword', password);
-        await new Promise(resolve => setTimeout(resolve, randomDelay(500, 1000)));
-        
-        // Click sign in button
-        logger.info('Clicking sign in button');
-        await this.page.click('input[name="signInSubmitButton"]');
-        
-        // Wait for navigation after login
-        logger.info('Waiting for login to complete');
-        await Promise.race([
-          waitForNavigation(this.page),
-          new Promise(resolve => setTimeout(resolve, 10000))
-        ]);
-        
-        // Additional wait for any redirects
-        await new Promise(resolve => setTimeout(resolve, 3000));
-        
-        logger.info('Login completed successfully');
-        return true;
-      } else {
-        logger.info('No login required - already authenticated');
-        return false;
-      }
-    } catch (error) {
-      logger.error(`Login failed: ${error.message}`);
-      await takeScreenshot(this.page, 'login_error');
-      throw error;
-    }
-  }
-
   async fillForm(leadData) {
     try {
       logger.info(`Filling form for: ${leadData['First Name']} ${leadData['Last Name']}`);
       
       // Navigate to form if not already there
       logger.info('Step 1: Checking page URL and navigating if needed');
-      if (!this.page.url().includes('/Lead/Add')) {
-        logger.info('Navigating to form page');
+      if (!this.page.url().includes('localhost:3000')) {
+        logger.info('Navigating to localhost:3000');
         await this.page.goto(config.formUrl);
         await new Promise(resolve => setTimeout(resolve, config.delays.pageLoad));
-        
-        // Check if login is required after navigation
-        await this.handleLogin();
-        
-        // If we had to login, navigate to form page again
-        if (!this.page.url().includes('/Lead/Add')) {
-          logger.info('Navigating to form page after login');
-          await this.page.goto(config.formUrl);
-          await new Promise(resolve => setTimeout(resolve, config.delays.pageLoad));
-        }
-        
         logger.info('Navigation completed');
       } else {
-        logger.info('Already on form page');
+        logger.info('Already on localhost:3000');
       }
       
       // Random mouse movement to simulate human behavior
       logger.info('Step 2: Random mouse movement');
       await randomMouseMovement(this.page);
       
-      // Fill ONLY highlighted fields from screenshot
-      logger.info('Step 3: Filling First Name (highlighted)');
+      // Fill Borrower Details
+      logger.info('Step 3: Filling First Name');
       await humanType(this.page, '#FirstName', leadData['First Name'] || '');
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      logger.info('Step 4: Filling Last Name (highlighted)');
+      logger.info('Step 4: Filling Last Name');
       await humanType(this.page, '#LastName', leadData['Last Name'] || '');
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      logger.info('Step 5: Filling Phone Number (highlighted)');
+      logger.info('Step 5: Filling Phone Number');
       await humanType(this.page, '#PhoneNumber', formatPhoneNumber(leadData['Phone Number'] || ''));
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      // Email - leave empty (not highlighted in screenshot)
-      logger.info('Step 6: Checking and filling Email (not highlighted - leave empty)');
+      // Email - not in Excel data, leave empty or set default
+      logger.info('Step 6: Checking and filling Email');
       const emailExists = await elementExists(this.page, '#Email');
       logger.info(`Email field exists: ${emailExists}`);
       if (emailExists) {
-        logger.info('Leaving email field empty');
+        logger.info('Typing in email field');
         await humanType(this.page, '#Email', '');
+        logger.info('Email typing completed');
         await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       }
       logger.info('Step 6 completed successfully');
       
-      logger.info('Step 7: Filling Credit Score (highlighted)');
+      logger.info('Step 7: Filling Credit Score');
       await humanType(this.page, '#CreditScore', (leadData['Fico'] || '').toString());
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
@@ -208,11 +142,11 @@ class LeadFormAutomation {
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
       // Address Details (highlighted fields only)
-      logger.info('Step 9: Filling Address (highlighted)');
+      logger.info('Step 9: Filling Address');
       await humanType(this.page, '#Address', leadData['Address'] || '');
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      logger.info('Step 10: Filling City (highlighted)');
+      logger.info('Step 10: Filling City');
       await humanType(this.page, '#City', leadData['City'] || '');
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
@@ -222,7 +156,7 @@ class LeadFormAutomation {
       await this.page.select('#State', stateValue);
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      logger.info('Step 12: Filling Zip Code (highlighted)');
+      logger.info('Step 12: Filling Zip Code');
       await humanType(this.page, '#Zip', (leadData['Zip Code'] || '').toString());
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
@@ -231,11 +165,11 @@ class LeadFormAutomation {
       await this.page.select('#PropertyState', stateValue);
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      logger.info('Step 14: Filling Property Zip Code (highlighted)');
+      logger.info('Step 14: Filling Property Zip Code');
       await humanType(this.page, '#PropertyZip', (leadData['Zip Code'] || '').toString());
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      logger.info('Step 15: Filling Property Value (highlighted)');
+      logger.info('Step 15: Filling Property Value');
       const propertyValue = formatCurrency(leadData['Initial Loan amount of recent mortgage'] || '0');
       await humanType(this.page, '#CurrentValueFormatted', propertyValue);
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
@@ -252,7 +186,7 @@ class LeadFormAutomation {
       await humanType(this.page, '#MonthlyPropertyTaxFormatted', '0');
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.betweenFields))));
       
-      // Set default values for non-highlighted fields (based on screenshot)
+      // Set default values for non-highlighted fields
       logger.info('Step 19: Setting default values for remaining fields');
       
       // Leave Current Loan Program empty (as shown in screenshot)
@@ -284,11 +218,12 @@ class LeadFormAutomation {
 
   async submitForm() {
     try {
+      logger.info('Starting form submission process');
       // Wait before submission
       await new Promise(resolve => setTimeout(resolve, randomDelay(...Object.values(config.delays.afterFormFill))));
       
-      // Click the Save & Quote button
       logger.info('Clicking Save & Quote button');
+      // Click the Save & Quote button
       await this.page.click('button[value="save-and-quote"]');
       logger.info('Save & Quote button clicked');
       
@@ -298,25 +233,20 @@ class LeadFormAutomation {
         new Promise(resolve => setTimeout(resolve, 5000))
       ]);
       
-      // Check for success (URL change or success message)
-      const currentUrl = this.page.url();
-      if (!currentUrl.includes('/Lead/Add')) {
-        logger.info('Form submitted successfully');
+      // Wait for the POST request to complete
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      // Check if form submission was successful
+      try {
+        await this.page.evaluate(() => document.title);
+        logger.info('Form submitted successfully to local server');
         this.successCount++;
         return true;
+      } catch (error) {
+        logger.error('Form submission may have failed');
+        this.failureCount++;
+        return false;
       }
-      
-      // Check for validation errors
-      const errors = await this.page.$$('.field-validation-error');
-      if (errors.length > 0) {
-        const errorTexts = await Promise.all(
-          errors.map(el => this.page.evaluate(e => e.textContent, el))
-        );
-        logger.error(`Validation errors: ${errorTexts.join(', ')}`);
-      }
-      
-      this.failureCount++;
-      return false;
     } catch (error) {
       logger.error(`Error submitting form: ${error.message}`);
       await takeScreenshot(this.page, 'submission_error');

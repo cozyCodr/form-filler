@@ -1,0 +1,250 @@
+<html lang="en"
+  class="a-transition a-transform a-opacity a-border-image a-border-radius a-box-shadow a-text-stroke a-text-shadow a-touch-scrolling a-transform3d a-hires a-gradients a-local-storage a-textarea-placeholder a-input-placeholder a-autofocus a-webworker a-history a-geolocation a-drag-drop a-svg a-canvas a-video a-audio a-js"
+  data-aui-build-date="3.17.16.3-2017-10-11">
+
+<head>
+  <link href="https://d3oia8etllorh5.cloudfront.net/20240614193835/css/bootstrap.min.css" rel="stylesheet"
+    media="screen">
+  <link href="https://d3oia8etllorh5.cloudfront.net/20240614193835/css/cognito-login.css" rel="stylesheet"
+    media="screen">
+  <link href="https://d3oia8etllorh5.cloudfront.net/us-east-1_lMfrkAFV9/ALL/20240412185407/assets/CSS/custom-css.css"
+    rel="stylesheet" media="screen">
+  <title>Signin</title>
+
+  <script
+    src="https://d3oia8etllorh5.cloudfront.net/20240614193835/js/amazon-cognito-advanced-security-data.min.js"></script>
+  <script>
+    function getAdvancedSecurityData(formReference) {
+      if (typeof AmazonCognitoAdvancedSecurityData === "undefined") {
+        return true;
+      }
+
+      // UserpoolId is not available on frontend for springboard. We do not use userPoolId
+      // anyway other than put in context data. 
+      var userPoolId = "";
+      var clientId = getUrlParameter("client_id");
+
+      var username = "";
+      var usernameInput = document.getElementsByName("username")[0];
+      if (usernameInput && usernameInput.value) {
+        username = usernameInput.value;
+      }
+
+      var asfData = AmazonCognitoAdvancedSecurityData.getData(username, userPoolId, clientId);
+      if (typeof asfData === "undefined") {
+        return true;
+      }
+
+      if (formReference && formReference.cognitoAsfData) {
+        formReference.cognitoAsfData.value = asfData
+      }
+
+      return true;
+    }
+
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    function onSubmit(evt, formRef) {
+      formRef.querySelector('button[type="submit"]').disabled = true;
+      if (!!formRef.submitted) {
+        evt.preventDefault();
+        return false;
+      } else {
+        formRef.submitted = true;
+        return getAdvancedSecurityData(formRef);
+      }
+    }
+
+    function onSubmitLoginForm(formRef) {
+      formRef.querySelector('input[name="signInSubmitButton"]').disabled = true;
+      getAdvancedSecurityData(formRef)
+    }
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body spellcheck="false">
+  <div class="container">
+    <div class="modal-dialog">
+      <div class="modal-content background-customizable modal-content-mobile visible-xs visible-sm">
+        <div>
+          <div>
+            <div class="banner-customizable">
+              <center>
+                <img alt="logo" class="logo-customizable"
+                  src="https://d3oia8etllorh5.cloudfront.net/us-east-1_lMfrkAFV9/ALL/20240412185407/assets/images/image.jpg">
+              </center>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div>
+
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+
+              </div>
+            </div>
+            <div>
+              <div>
+
+              </div>
+            </div>
+            <div>
+
+              <div>
+                <div>
+
+                  <span class="textDescription-customizable ">Sign in with your email and password</span>
+                  <form
+                    action="/login?client_id=1f73sefl8csaus72bld66qv3nc&amp;redirect_uri=https%3A%2F%2Fthe-leadzone.com%2Fsignin-oidc&amp;response_type=code&amp;scope=openid profile&amp;code_challenge=BjJtc26pyxMBceeHycL6KYyrM8Hn4bmmYHq9fDS2Utg&amp;code_challenge_method=S256&amp;nonce=638853242027059591.ZmFiMzk5NjMtMTliNC00MDgwLTg4NWUtZDEwNmFjMDZiN2IzMTFiNzlkOWYtMmYwOC00MjI5LThjMDYtOTU4NzM5NTFlNzYx&amp;state=CfDJ8DXbwjkBVl5Hh551pCpqyMCf9qJYwwT8qzyViX2HHb0kiid0T2yuOc6vTmMUfMVURf5_JsYDjyUGnp7o1H7yQcBZWSK5z5feGhEp0mEm1l1PHJ6pC1ZvSsQZuaNAA5aF-FCFgSM086hk6XbnqMw_vAWp3If9JA7ZyQHnIEHfbN763P9PpDDsclEWLJbHTrQ3s3Km1Wl6BWxbjLtLaK1w2B7cXH0bgRKeMhMal5xhNVCsrzKb6yGePtaW9VaYaPlSsjTU8uVUBQ6puFzsNfLyNuHwadNfntREoMwfjxBtX-KALHQ1cMh5iwU_1ZVhs7erZ5-3zj5ZXdP_wrmxE3A0ArYEz6h8xVT208lWZIKGMl1tiKBHjZm3KvYmOPDvs9EGbg"
+                    method="POST" name="cognitoSignInForm" class="cognito-asf" onsubmit="onSubmitLoginForm(this);">
+                    <input type="hidden" name="_csrf" value="80dca9e7-ad37-4f1a-9b5d-bf58a9d044d5">
+
+
+
+
+                    <label for="signInFormUsername" class="label-customizable">Email</label>
+                    <div>
+                      <input id="signInFormUsername" name="username" type="text"
+                        class="form-control inputField-customizable" placeholder="name@host.com" autocapitalize="none"
+                        required="" value="">
+
+
+                    </div>
+
+                    <label for="signInFormPassword" class="label-customizable">Password</label>
+                    <div><input id="signInFormPassword" name="password" type="password"
+                        class="form-control inputField-customizable" placeholder="Password" required=""></div>
+                    <input type="hidden" class="form-control inputField-customizable" name="cognitoAsfData">
+                    <div>
+                      <a class="redirect-customizable"
+                        href="/forgotPassword?client_id=1f73sefl8csaus72bld66qv3nc&amp;redirect_uri=https%3A%2F%2Fthe-leadzone.com%2Fsignin-oidc&amp;response_type=code&amp;scope=openid%20profile&amp;code_challenge=BjJtc26pyxMBceeHycL6KYyrM8Hn4bmmYHq9fDS2Utg&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=638853242027059591.ZmFiMzk5NjMtMTliNC00MDgwLTg4NWUtZDEwNmFjMDZiN2IzMTFiNzlkOWYtMmYwOC00MjI5LThjMDYtOTU4NzM5NTFlNzYx&amp;state=CfDJ8DXbwjkBVl5Hh551pCpqyMCf9qJYwwT8qzyViX2HHb0kiid0T2yuOc6vTmMUfMVURf5_JsYDjyUGnp7o1H7yQcBZWSK5z5feGhEp0mEm1l1PHJ6pC1ZvSsQZuaNAA5aF-FCFgSM086hk6XbnqMw_vAWp3If9JA7ZyQHnIEHfbN763P9PpDDsclEWLJbHTrQ3s3Km1Wl6BWxbjLtLaK1w2B7cXH0bgRKeMhMal5xhNVCsrzKb6yGePtaW9VaYaPlSsjTU8uVUBQ6puFzsNfLyNuHwadNfntREoMwfjxBtX-KALHQ1cMh5iwU_1ZVhs7erZ5-3zj5ZXdP_wrmxE3A0ArYEz6h8xVT208lWZIKGMl1tiKBHjZm3KvYmOPDvs9EGbg&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=8.8.0.0">Forgot
+                        your password?</a>
+                    </div>
+                    <input name="signInSubmitButton" type="Submit" value="Sign in"
+                      class="btn btn-primary submitButton-customizable" aria-label="submit">
+                    <br>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal-content background-customizable modal-content-mobile visible-md visible-lg">
+        <div>
+          <div>
+            <div class="banner-customizable">
+              <center>
+                <img alt="logo" class="logo-customizable"
+                  src="https://d3oia8etllorh5.cloudfront.net/us-east-1_lMfrkAFV9/ALL/20240412185407/assets/images/image.jpg">
+              </center>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div>
+
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <div>
+
+                </div>
+              </div>
+              <div>
+                <div>
+
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+
+                  <span class="textDescription-customizable ">Sign in with your email and password</span>
+                  <form
+                    action="/login?client_id=1f73sefl8csaus72bld66qv3nc&amp;redirect_uri=https%3A%2F%2Fthe-leadzone.com%2Fsignin-oidc&amp;response_type=code&amp;scope=openid profile&amp;code_challenge=BjJtc26pyxMBceeHycL6KYyrM8Hn4bmmYHq9fDS2Utg&amp;code_challenge_method=S256&amp;nonce=638853242027059591.ZmFiMzk5NjMtMTliNC00MDgwLTg4NWUtZDEwNmFjMDZiN2IzMTFiNzlkOWYtMmYwOC00MjI5LThjMDYtOTU4NzM5NTFlNzYx&amp;state=CfDJ8DXbwjkBVl5Hh551pCpqyMCf9qJYwwT8qzyViX2HHb0kiid0T2yuOc6vTmMUfMVURf5_JsYDjyUGnp7o1H7yQcBZWSK5z5feGhEp0mEm1l1PHJ6pC1ZvSsQZuaNAA5aF-FCFgSM086hk6XbnqMw_vAWp3If9JA7ZyQHnIEHfbN763P9PpDDsclEWLJbHTrQ3s3Km1Wl6BWxbjLtLaK1w2B7cXH0bgRKeMhMal5xhNVCsrzKb6yGePtaW9VaYaPlSsjTU8uVUBQ6puFzsNfLyNuHwadNfntREoMwfjxBtX-KALHQ1cMh5iwU_1ZVhs7erZ5-3zj5ZXdP_wrmxE3A0ArYEz6h8xVT208lWZIKGMl1tiKBHjZm3KvYmOPDvs9EGbg"
+                    method="POST" name="cognitoSignInForm" class="cognito-asf" onsubmit="onSubmitLoginForm(this);">
+                    <input type="hidden" name="_csrf" value="80dca9e7-ad37-4f1a-9b5d-bf58a9d044d5">
+
+
+
+
+                    <label for="signInFormUsername" class="label-customizable">Email</label>
+                    <div>
+                      <input id="signInFormUsername" name="username" type="text"
+                        class="form-control inputField-customizable" placeholder="name@host.com" autocapitalize="none"
+                        required="" value="">
+
+
+                    </div>
+
+                    <label for="signInFormPassword" class="label-customizable">Password</label>
+                    <div><input id="signInFormPassword" name="password" type="password"
+                        class="form-control inputField-customizable" placeholder="Password" required=""></div>
+                    <input type="hidden" class="form-control inputField-customizable" name="cognitoAsfData">
+                    <div>
+                      <a class="redirect-customizable"
+                        href="/forgotPassword?client_id=1f73sefl8csaus72bld66qv3nc&amp;redirect_uri=https%3A%2F%2Fthe-leadzone.com%2Fsignin-oidc&amp;response_type=code&amp;scope=openid%20profile&amp;code_challenge=BjJtc26pyxMBceeHycL6KYyrM8Hn4bmmYHq9fDS2Utg&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=638853242027059591.ZmFiMzk5NjMtMTliNC00MDgwLTg4NWUtZDEwNmFjMDZiN2IzMTFiNzlkOWYtMmYwOC00MjI5LThjMDYtOTU4NzM5NTFlNzYx&amp;state=CfDJ8DXbwjkBVl5Hh551pCpqyMCf9qJYwwT8qzyViX2HHb0kiid0T2yuOc6vTmMUfMVURf5_JsYDjyUGnp7o1H7yQcBZWSK5z5feGhEp0mEm1l1PHJ6pC1ZvSsQZuaNAA5aF-FCFgSM086hk6XbnqMw_vAWp3If9JA7ZyQHnIEHfbN763P9PpDDsclEWLJbHTrQ3s3Km1Wl6BWxbjLtLaK1w2B7cXH0bgRKeMhMal5xhNVCsrzKb6yGePtaW9VaYaPlSsjTU8uVUBQ6puFzsNfLyNuHwadNfntREoMwfjxBtX-KALHQ1cMh5iwU_1ZVhs7erZ5-3zj5ZXdP_wrmxE3A0ArYEz6h8xVT208lWZIKGMl1tiKBHjZm3KvYmOPDvs9EGbg&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=8.8.0.0">Forgot
+                        your password?</a>
+                    </div>
+                    <input name="signInSubmitButton" type="Submit" value="Sign in"
+                      class="btn btn-primary submitButton-customizable" aria-label="submit">
+                    <br>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var inputs = document.querySelectorAll("input");
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", function () {
+          var name = this.name;
+          var value = this.value;
+          var matchingInputs = document.querySelectorAll(`input[name="${name}"]`);
+
+          matchingInputs.forEach((match) => {
+            if (match !== this) {
+              match.value = value;
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+
+
+  <div class="fwcim-container"></div>
+</body>
+
+</html>

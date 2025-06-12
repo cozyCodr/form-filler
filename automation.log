@@ -1,30 +1,57 @@
-2025-06-11T18:46:37.552Z [INFO]: Launching browser with stealth mode...
-2025-06-11T18:46:41.791Z [INFO]: Browser initialized successfully
-2025-06-11T18:46:42.312Z [INFO]: Loaded 0 records from Excel file
-2025-06-11T18:46:42.312Z [INFO]: Processing 0 leads starting from row 0
-2025-06-11T18:46:42.312Z [INFO]: === PROCESSING SUMMARY ===
-2025-06-11T18:46:42.313Z [INFO]: Total Processed: 0
-2025-06-11T18:46:42.313Z [INFO]: Successful: 0
-2025-06-11T18:46:42.313Z [INFO]: Failed: 0
-2025-06-11T18:46:42.315Z [INFO]: Detailed results saved to: results_2025-06-11.json
-2025-06-11T18:46:43.198Z [INFO]: Browser closed
-2025-06-11T18:54:12.507Z [INFO]: Launching browser with stealth mode...
-2025-06-11T18:54:15.649Z [INFO]: Browser initialized successfully
-2025-06-11T18:54:16.393Z [INFO]: Loaded 0 records from Excel file
-2025-06-11T18:54:16.394Z [INFO]: Processing 0 leads starting from row 0
-2025-06-11T18:54:16.394Z [INFO]: === PROCESSING SUMMARY ===
-2025-06-11T18:54:16.395Z [INFO]: Total Processed: 0
-2025-06-11T18:54:16.395Z [INFO]: Successful: 0
-2025-06-11T18:54:16.395Z [INFO]: Failed: 0
-2025-06-11T18:54:16.397Z [INFO]: Detailed results saved to: results_2025-06-11.json
-2025-06-11T18:54:17.031Z [INFO]: Browser closed
-2025-06-11T19:00:11.980Z [INFO]: Launching browser with stealth mode...
-2025-06-11T19:00:14.937Z [INFO]: Browser initialized successfully
-2025-06-11T19:00:15.489Z [INFO]: Loaded 0 records from Excel file
-2025-06-11T19:00:15.490Z [INFO]: Processing 0 leads starting from row 0
-2025-06-11T19:00:15.491Z [INFO]: === PROCESSING SUMMARY ===
-2025-06-11T19:00:15.491Z [INFO]: Total Processed: 0
-2025-06-11T19:00:15.492Z [INFO]: Successful: 0
-2025-06-11T19:00:15.492Z [INFO]: Failed: 0
-2025-06-11T19:00:15.493Z [INFO]: Detailed results saved to: results_2025-06-11.json
-2025-06-11T19:00:16.041Z [INFO]: Browser closed
+2025-06-12T09:55:45.648Z [INFO]: Launching browser with stealth mode...
+2025-06-12T09:55:48.478Z [INFO]: Browser initialized successfully
+2025-06-12T09:55:49.359Z [INFO]: Loaded 0 records from Excel file
+2025-06-12T09:55:49.360Z [INFO]: Processing 0 leads starting from row 0
+2025-06-12T09:55:49.360Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T09:55:49.360Z [INFO]: Total Processed: 0
+2025-06-12T09:55:49.361Z [INFO]: Successful: 0
+2025-06-12T09:55:49.361Z [INFO]: Failed: 0
+2025-06-12T09:55:49.362Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T09:55:49.763Z [INFO]: Browser closed
+2025-06-12T09:56:42.888Z [INFO]: Launching browser with stealth mode...
+2025-06-12T09:56:43.384Z [INFO]: Browser initialized successfully
+2025-06-12T09:56:43.964Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T09:56:43.964Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T09:56:43.964Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T09:56:43.965Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T09:56:48.528Z [ERROR]: Error filling form: this.page.waitForTimeout is not a function
+2025-06-12T09:56:52.331Z [INFO]: Screenshot saved: screenshots/form_fill_error_2025-06-12T09-56-48-529Z.png
+2025-06-12T09:56:52.331Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T09:56:52.331Z [INFO]: Total Processed: 0
+2025-06-12T09:56:52.331Z [INFO]: Successful: 0
+2025-06-12T09:56:52.331Z [INFO]: Failed: 0
+2025-06-12T09:56:52.332Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T09:56:53.021Z [INFO]: Browser closed
+2025-06-12T09:58:00.110Z [INFO]: Launching browser with stealth mode...
+2025-06-12T09:58:00.595Z [INFO]: Browser initialized successfully
+2025-06-12T09:58:01.155Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T09:58:01.156Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T09:58:01.156Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T09:58:01.156Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T09:58:11.355Z [ERROR]: Error filling form: No element found for selector: #FirstName
+2025-06-12T09:58:12.868Z [INFO]: Screenshot saved: screenshots/form_fill_error_2025-06-12T09-58-11-356Z.png
+2025-06-12T09:58:12.869Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T09:58:12.869Z [INFO]: Total Processed: 0
+2025-06-12T09:58:12.869Z [INFO]: Successful: 0
+2025-06-12T09:58:12.869Z [INFO]: Failed: 0
+2025-06-12T09:58:12.870Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T09:58:13.571Z [INFO]: Browser closed
+2025-06-12T11:22:22.439Z [INFO]: Launching browser with stealth mode...
+2025-06-12T11:22:24.274Z [INFO]: Browser initialized successfully
+2025-06-12T11:22:25.157Z [INFO]: Loaded 4089 records from Excel file
+2025-06-12T11:22:25.158Z [INFO]: Processing 1 leads starting from row 0
+2025-06-12T11:22:25.158Z [INFO]: Processing lead 1/1 (Row 2 in Excel)
+2025-06-12T11:22:25.159Z [INFO]: Filling form for: Sonya Ladner
+2025-06-12T11:22:25.159Z [INFO]: Step 1: Checking page URL and navigating if needed
+2025-06-12T11:22:25.160Z [INFO]: Navigating to form page
+2025-06-12T11:22:34.617Z [INFO]: Navigation completed
+2025-06-12T11:22:34.618Z [INFO]: Step 2: Random mouse movement
+2025-06-12T11:22:35.610Z [INFO]: Step 3: Filling First Name (highlighted)
+2025-06-12T11:22:35.636Z [ERROR]: Error filling form: No element found for selector: #FirstName
+2025-06-12T11:22:38.012Z [INFO]: Screenshot saved: screenshots/form_fill_error_2025-06-12T11-22-35-636Z.png
+2025-06-12T11:22:38.012Z [INFO]: === PROCESSING SUMMARY ===
+2025-06-12T11:22:38.013Z [INFO]: Total Processed: 0
+2025-06-12T11:22:38.013Z [INFO]: Successful: 0
+2025-06-12T11:22:38.013Z [INFO]: Failed: 0
+2025-06-12T11:22:38.017Z [INFO]: Detailed results saved to: results_2025-06-12.json
+2025-06-12T11:22:38.891Z [INFO]: Browser closed

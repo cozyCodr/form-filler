@@ -1,6 +1,6 @@
 module.exports = {
   // Form URL
-  formUrl: "https://the-leadzone.com/Lead/Add",
+  formUrl: "http://localhost:3000",
 
   // Excel file configuration
   excelFile: "input.xlsx",
