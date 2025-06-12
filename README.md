@@ -1,10 +1,11 @@
 # Lead Form Automation
 
-Automated lead data entry for theleadzone.com using Puppeteer with stealth mode. This application reads lead data from Excel files and automatically fills forms on the website with authentication handling.
+Automated lead data entry for theleadzone.com using Puppeteer with stealth mode. This application reads lead data from an Excel file and automatically fills forms on the website after the user manually logs in.
 
 ## Features
 
-- **Automatic Login**: Handles AWS Cognito authentication automatically
+- **Manual Login**: Requires the user to log in manually in the opened browser window.
+- **Interactive Login Verification**: Checks for successful login after manual authentication and prompts the user to re-login if needed.
 - **Excel Integration**: Reads lead data from Excel files (XLSX format)
 - **Stealth Mode**: Uses Puppeteer with stealth plugin to avoid detection
 - **Smart Form Filling**: Only fills highlighted fields based on requirements
@@ -16,39 +17,43 @@ Automated lead data entry for theleadzone.com using Puppeteer with stealth mode.
 
 - Node.js (v16 or higher)
 - npm or yarn package manager
-- Valid login credentials for theleadzone.com
+- Access to theleadzone.com login page.
+- An `input.xlsx` file with your lead data in the correct format.
 
 ## Installation
 
 1. Clone the repository:
-```bash
-git clone <repository-url>
-cd form-filler
-```
+
+    ```bash
+    git clone <repository-url>
+    cd form-filler
+    ```
 
 2. Install dependencies:
-```bash
-npm install
-```
+
+    ```bash
+    npm install
+    ```
 
 3. Configure environment variables:
-```bash
-cp .env.example .env
-# Edit .env with your actual login credentials
-```
+
+    ```bash
+    cp .env.example .env
+    # Edit .env with your actual login credentials
+    ```
 
 ## Configuration
 
 ### Environment Variables (.env)
-```env
-LOGIN_EMAIL=your_email@example.com
-LOGIN_PASSWORD=your_password_here
-```
+
+While this version of the script relies on manual login, the `.env` file can still be used for other potential configurations in the future. The `LOGIN_EMAIL` and `LOGIN_PASSWORD` variables are not used in the current manual login flow.
 
 ### Excel File Format
+
 The application expects an Excel file (`input.xlsx`) with the following columns:
+
 - First Name
-- Last Name  
+- Last Name
 - Phone Number
 - Fico (Credit Score)
 - Address
@@ -60,6 +65,7 @@ The application expects an Excel file (`input.xlsx`) with the following columns:
 ## Usage
 
 ### Test Mode (Single Record)
+
 ```bash
 npm test
 # or
@@ -67,6 +73,7 @@ node index.js --test
 ```
 
 ### Process All Records
+
 ```bash
 npm start
 # or
@@ -74,6 +81,7 @@ node index.js
 ```
 
 ### Advanced Options
+
 ```bash
 # Start from specific row
 node index.js --start 5
@@ -85,11 +93,14 @@ node index.js --max 10
 node index.js --start 5 --max 3
 ```
 
+Follow the prompts in the terminal regarding the manual login step.
+
 ## Form Fields
 
 The automation fills only the highlighted fields as specified:
+
 - ✅ First Name
-- ✅ Last Name  
+- ✅ Last Name
 - ✅ Phone Number
 - ✅ Credit Score
 - ✅ Address
@@ -105,11 +116,15 @@ Default values are set for non-highlighted fields to ensure form submission.
 
 ## Authentication Flow
 
-1. **Navigate** to form URL
-2. **Detect** if login is required
-3. **Authenticate** using credentials from .env
-4. **Redirect** to form page after successful login
-5. **Fill** and submit form data
+1. **Launch Browser:** The script opens a new browser window and navigates to the form URL, which serves as the initial page for manual login.
+2. **Manual Login:** You are prompted to manually log in to the Lead Zone website in the opened browser window.
+3. **Indicate Login Complete:** After successfully logging in, you press Enter in the terminal.
+4. **Login Verification Loop:** The script enters a loop:
+    - It opens a new tab and navigates to the form page (`/Lead/Add`).
+    - It checks for the presence of the `#FirstName` element on this new tab to verify successful login. This check is performed every 5 seconds for up to 30 seconds.
+    - If `#FirstName` is found, login is verified, the new tab is closed, and the script proceeds.
+    - If `#FirstName` is not found within 30 seconds, the script logs a warning, prompts you to ensure you are logged in, and waits for you to press Enter again to re-verify. The verification loop continues until successful.
+5. **Automated Form Filling:** Once login is verified, the script proceeds to read data from `input.xlsx` and fill forms in the original tab.
 
 ## Logging
 
@@ -144,12 +159,13 @@ form-filler/
 
 ### Common Issues
 
-1. **Login Failed**: Verify credentials in .env file
+1. **Login Verification Failed**: Ensure you have successfully logged in manually in the browser window and reached the form page. The script will re-prompt you to press Enter after you've had a chance to log in again.
 2. **Excel File Not Found**: Ensure input.xlsx exists in root directory
 3. **Form Submission Failed**: Check for validation errors in logs
 4. **Browser Crashes**: Review screenshots/ directory for visual debugging
 
 ### Debug Mode
+
 Enable detailed logging by checking `automation.log` file for step-by-step execution details.
 
 ## Development
